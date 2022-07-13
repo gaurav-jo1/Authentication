@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     # Tools
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
-    "corsheaders",
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -90,10 +90,8 @@ SIMPLE_JWT = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
-    "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
-
-
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -177,6 +175,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-]
+CORS_ALLOW_ALL_ORIGINS= True
