@@ -18,8 +18,8 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Header />
       <AuthProvider>
+      <Header />
         <Routes>
           <Route path="/" element={User ? <HomePage /> : <LoginPage />} />
           <Route path="/login" element={<LoginPage />} />
