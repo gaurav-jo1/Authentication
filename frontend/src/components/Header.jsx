@@ -6,9 +6,11 @@ const Header = () => {
   let { user } = useContext(AuthContext);
   return (
     <div>
-      <Link to="/">Home</Link>
-      <span> | </span>
-      {user ? <p>Logout</p> : <Link to="/login">Login</Link>}
+      <div>
+        <Link to="/">Home</Link>
+        <span> | </span>
+        {user ? <p>Logout</p> : <Link to="/login">Login</Link>}
+      </div>
 
       {user && <p>Hello {user.username}</p>}
     </div>
