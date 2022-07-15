@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import PrivateRoute from "./utils/PrivateRoute";
 
 // -- State Management --
-import  { AuthProvider } from "./context/AuthContext";
+import { AuthProvider } from "./context/AuthContext";
 
 // Styling
 import "./App.css";

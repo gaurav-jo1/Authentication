@@ -9,9 +9,9 @@ const Header = () => {
       <div>
         <Link to="/">Home</Link>
         <span> | </span>
-        {user ? <Link to='/'> <p onClick={logoutUser}>Logout</p> </Link> : <Link to="/login">Login</Link>}
+        {user ?  <Link to="/">  <p onClick={logoutUser}>Logout</p> </Link> : <Link to="/login">Login</Link> }
       </div>
-
+      
       {user && <p>Hello {user.username}</p>}
     </div>
   );

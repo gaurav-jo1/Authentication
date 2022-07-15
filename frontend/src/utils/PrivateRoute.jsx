@@ -13,7 +13,7 @@ const PrivateRoute = () => {
   let { user } = useContext(AuthContext);
   return (
     <Routes>
-      <Route path="*" element={user ? <HomePage/> : <LoginPage/>} />
+      <Route path="*" element={user ? <HomePage /> : <LoginPage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
     </Routes>
