@@ -1,5 +1,6 @@
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -32,7 +33,9 @@ def getRoutes(request):
     return Response(routes)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getNote(request):
-    notes = Note.objects.all()
+    user = request.user
+    notes = user.note_set.all()
     serializer = NoteSerializers(notes, many=True)
     return Response(serializer.data)
