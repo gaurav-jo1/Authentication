@@ -4,10 +4,10 @@ import AuthContext from "../context/AuthContext";
 const HomePage = () => {
   let [notes, setNotes] = useState([]);
   let {authTokens, logoutUser} = useContext(AuthContext);
-
+  
   useEffect(()=> {
     getNotes()
-  }, [])
+}, [])
 
   let getNotes = async() =>{
     let response = await fetch('http://127.0.0.1:8000/api/notes/', {
