@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -7,6 +8,10 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .serializers import NoteSerializers
 from base.models import Note
+
+def front(request):
+    context = { }
+    return render(request, "index.html", context)
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -22,15 +27,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
-
-
-@api_view(['GET'])
-def getRoutes(request):
-    routes = [
-        'api/token',
-        'api/token/refresh'
-    ]
-    return Response(routes)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
