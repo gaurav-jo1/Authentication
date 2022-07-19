@@ -1,0 +1,25 @@
+.Header_container_links {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  margin-bottom: 1rem;
+
+  p {
+    margin: 20px 140px 0 140px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+.Header_user_hello {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}

@@ -1,6 +1,8 @@
 import React, {useState, useEffect, useContext} from "react";
 import AuthContext from "../context/AuthContext";
 
+import './HomePage.scss';
+
 const HomePage = () => {
   let [notes, setNotes] = useState([]);
   let {authTokens, logoutUser} = useContext(AuthContext);
@@ -28,7 +30,7 @@ const HomePage = () => {
 }
 
   return (
-    <div>
+    <div className="HomePage_container">
       <p>You are logged to the home page</p>
 
       <ul>

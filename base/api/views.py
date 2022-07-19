@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-# Serializers
+# Serializer
 from .serializers import NoteSerializers
 
 # Create your views here.
@@ -26,8 +26,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         # Add custom claims
         token['username'] = user.username
-        # ...
-
+        
         return token
 
 
