@@ -1,17 +1,23 @@
+# Django
 from django.shortcuts import render
+
+# Django REST Framework
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 
+# Simple JWT
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
+# Serializers
 from .serializers import NoteSerializers
-from base.models import Note
 
+# Create your views here.
 def front(request):
-    context = { }
+    context = {}
     return render(request, "index.html", context)
+
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -27,6 +33,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
+
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
